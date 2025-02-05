@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Data API Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Fake Data API</h1>
+        <p>Generate realistic fake profiles for testing and security purposes.</p>
+    </header>
+
+    <nav>
+        <a href="#authentication">Authentication</a>
+        <a href="#endpoints">Endpoints</a>
+        <a href="#code-examples">Code Examples</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+
+    <section id="authentication">
+        <h2>🔑 Authentication</h2>
+        <p>To use this API, you must obtain an API key. Pass your key as a header:</p>
+        <pre><code>Headers: {"X-API-Key": "your-api-key-here"}</code></pre>
+    </section>
+
+    <section id="endpoints">
+        <h2>📌 API Endpoints</h2>
+
+        <div class="endpoint">
+            <h3>1️⃣ Generate Fake Profile</h3>
+            <p>Creates a fake user profile.</p>
+            <pre><code>GET /generate?age=25&gender=male&country=US</code></pre>
+        </div>
+
+        <div class="endpoint">
+            <h3>2️⃣ Bulk Generate Profiles</h3>
+            <p>Generates multiple fake profiles (max 100).</p>
+            <pre><code>GET /bulk-generate?count=5</code></pre>
+        </div>
+
+        <div class="endpoint">
+            <h3>3️⃣ Get Supported Countries</h3>
+            <pre><code>GET /countries</code></pre>
+        </div>
+        
+        <div class="endpoint">
+            <h3>4️⃣ View API Usage Stats</h3>
+            <pre><code>GET /stats</code></pre>
+        </div>
+    </section>
+
+    <section id="code-examples">
+        <h2>🚀 Code Examples</h2>
+
+        <h3>📌 Python</h3>
+        <pre><code>
+import requests
+headers = {"X-API-Key": "your-api-key-here"}
+response = requests.get("http://127.0.0.1:8000/generate", headers=headers)
+print(response.json())
+        </code></pre>
+
+        <h3>📌 JavaScript (Fetch)</h3>
+        <pre><code>
+fetch("http://127.0.0.1:8000/generate", {
+    headers: { "X-API-Key": "your-api-key-here" }
+}).then(res => res.json()).then(data => console.log(data));
+        </code></pre>
+
+        <h3>📌 PHP</h3>
+        <pre><code>
+&lt;?php
+$headers = array("X-API-Key: your-api-key-here");
+$ch = curl_init("http://127.0.0.1:8000/generate");
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+echo $response;
+?&gt;
+        </code></pre>
+
+        <h3>📌 cURL</h3>
+        <pre><code>
+curl -H "X-API-Key: your-api-key-here" http://127.0.0.1:8000/generate
+        </code></pre>
+    </section>
+
+    <section id="faq">
+        <h2>❓ Frequently Asked Questions</h2>
+        <details>
+            <summary>What is this API for?</summary>
+            <p>This API generates realistic fake data for testing and security purposes.</p>
+        </details>
+
+        <details>
+            <summary>How do I get an API key?</summary>
+            <p>Register and generate an API key using `/register` and `/generate-api-key`.</p>
+        </details>
+
+        <details>
+            <summary>Is there a rate limit?</summary>
+            <p>Yes, the free tier allows 5 requests per minute.</p>
+        </details>
+    </section>
+
+    <footer>
+        <p>© 2024 Fake Data API | <a href="mailto:support@fakedataapi.com">Contact Support</a></p>
+    </footer>
+</body>
+</html>
