@@ -30,10 +30,10 @@ redis_client = redis.Redis(host='localhost', port=6379, db=0, decode_responses=T
 
 # MySQL Connection
 db = pymysql.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="api_service",
+    host="business103.web-hosting.com",
+    user="digimvjr_api_service",
+    password="digimvjr_api_service",
+    database="digimvjr_api_service",
     cursorclass=pymysql.cursors.DictCursor
 )
 
