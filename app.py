@@ -9,7 +9,6 @@ import secrets
 from passlib.context import CryptContext
 from slowapi import Limiter
 from slowapi.util import get_remote_address
-import os
 import uvicorn
 
 
@@ -187,6 +186,8 @@ async def get_countries():
 
 
 # Run API
+import os
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))  # Use PORT from environment
     uvicorn.run(app, host="0.0.0.0", port=port)
